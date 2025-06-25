@@ -131,7 +131,7 @@ def display_insights():
     print(Fore.CYAN + "Podium Appearances" + Fore.RESET)
     print(podium_appearances.to_string(header=False))
     print(Fore.CYAN + "\nMost Wins by Placement" + Fore.RESET)
-    print(Fore.YELLOW + "Most 1st Place:" + Fore.RESET)
+    print(Fore.YELLOW + "\nMost 1st Place:" + Fore.RESET)
     print(most_1st.to_string(header=False))
     print(Fore.YELLOW + "\nMost 2nd Place:" + Fore.RESET)
     print(most_2nd.to_string(header=False))
@@ -144,12 +144,12 @@ def display_insights():
         for _, row in group.iterrows():
             print(f"{row['player_name']:<15} {row['wins']}")
 
-    print(Fore.CYAN + "\nLongest Podium Streaks" + Fore.RESET)
+    print(Fore.CYAN + "\nLongest Streaks" + Fore.RESET)
+    print(Fore.YELLOW + "\nLongest Podium Streaks" + Fore.RESET)
     for player, streak in sorted(podium_streaks.items(), key=lambda x: x[1], reverse=True):
         gamemodes_str = ', '.join(podium_streak_gamemodes[player])
         print(f"{player:<20} {streak}  [{gamemodes_str}]")
-    
-    print(Fore.CYAN + "\nLongest Win Streaks" + Fore.RESET)
+    print(Fore.YELLOW + "\nLongest Win Streaks" + Fore.RESET)
     for player, streak in sorted(win_streaks.items(), key=lambda x: x[1], reverse=True):
         gamemodes_str = ', '.join(win_streak_gamemodes[player])
         print(f"{player:<20} {streak}  [{gamemodes_str}]")
